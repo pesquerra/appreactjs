@@ -6,21 +6,21 @@ pipeline {
         stage('Instalar Dependencias') {
             steps {
                 // Instalar las dependencias de Node.js y de la aplicación React
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         
         stage('Construir la Aplicación') {
             steps {
                 // Construir la aplicación React
-                sh 'npm build'
+                bat 'npm build'
             }
         }
 
        stage('Iniciar la Aplicación') {
             steps {
                 // Construir la aplicación React
-                sh 'npm start'
+                bat 'npm start'
             }
         }
     }
