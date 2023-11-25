@@ -13,16 +13,11 @@ pipeline {
         stage('Construir la Aplicación') {
             steps {
                 // Construir la aplicación React
-                bat 'npm build'
+                bat 'npm run build'
             }
         }
 
-       stage('Iniciar la Aplicación') {
-            steps {
-                // Construir la aplicación React
-                bat 'npm start'
-            }
-        }
+       
     }
     
     post {
