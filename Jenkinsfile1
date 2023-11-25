@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Clonar Repositorio') {
+            steps {
+                // Clonar el repositorio de tu aplicación desde el control de versiones
+                git 'https://github.com/softupcl/react-prueba-td.git'
+            }
+        }
+        
+        stage('Instalar Dependencias') {
+            steps {
+                // Instalar las dependencias de Node.js y de la aplicación React
+                sh 'npm install'
+            }
+        }
+        
+        stage('Construir la Aplicación') {
+            steps {
+                // Construir la aplicación React
+                sh 'npm build'
+            }
+        }
+
+       stage('Iniciar la Aplicación') {
+            steps {
+                // Construir la aplicación React
+                sh 'npm start'
+            }
+        }
+    }
+    
+    post {
+        success {
+            // Acciones a realizar si el despliegue es exitoso
+            echo 'Despliegue exitoso'
+        }
+        failure {
+            // Acciones a realizar si el despliegue falla
+            echo 'Error en el despliegue'
+        }
+    }
+}
