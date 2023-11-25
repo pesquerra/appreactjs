@@ -2,13 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Clonar Repositorio') {
-            steps {
-                // Clonar el repositorio de tu aplicación desde el control de versiones
-                git 'https://github.com/softupcl/react-prueba-td.git'
-            }
-        }
-        
+                
         stage('Instalar Dependencias') {
             steps {
                 // Instalar las dependencias de Node.js y de la aplicación React
